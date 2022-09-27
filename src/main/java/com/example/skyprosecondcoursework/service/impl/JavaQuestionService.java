@@ -14,7 +14,7 @@ public class JavaQuestionService implements QuestionService {
     private final Set<Question> questions;
     private final Random random;
 
-    public JavaQuestionService(Set<Question> questions) {
+    public JavaQuestionService() {
         this.questions = new HashSet<>();
         this.random = new Random();
     }
@@ -42,7 +42,7 @@ public class JavaQuestionService implements QuestionService {
 
     @Override
     public Collection<Question> getAll() {
-        return Collections.unmodifiableCollection(questions);
+        return Collections.unmodifiableCollection(new HashSet<>(questions));
     }
 
     @Override
